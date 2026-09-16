@@ -1,0 +1,3249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Ahsan — Python Developer | Enterprise & Manufacturing Systems</title>
+    <meta name="description"
+        content="Portfolio of Muhammad Ahsan, Python Developer specializing in Enterprise ERP Systems, Manufacturing Solutions, Oracle APEX, Computer Vision, and Document Management Systems.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        :root {
+            /* Surface & Canvas System */
+            --bg-canvas: #f8fafc;
+            --bg-canvas-subtle: #f1f5f9;
+            --bg-surface: #ffffff;
+            --bg-surface-elevated: #ffffff;
+
+            /* Accent Palettes - Refined & Distinct */
+            --brand-primary: #1e40af;
+            --brand-primary-hover: #1d4ed8;
+            --brand-primary-light: #eff6ff;
+            --brand-primary-border: #bfdbfe;
+            --brand-primary-glow: rgba(30, 64, 175, 0.12);
+
+            --accent-emerald: #047857;
+            --accent-emerald-light: #ecfdf5;
+            --accent-emerald-border: #a7f3d0;
+
+            --accent-violet: #4f46e5;
+            --accent-violet-light: #eef2ff;
+            --accent-violet-border: #c7d2fe;
+
+            --accent-amber: #b45309;
+            --accent-amber-light: #fffbeb;
+            --accent-amber-border: #fde68a;
+
+            --accent-slate: #475569;
+            --accent-slate-light: #f8fafc;
+            --accent-slate-border: #e2e8f0;
+
+            /* Hairline Borders & Structural Dividers */
+            --border-hairline: rgba(15, 23, 42, 0.08);
+            --border-subtle: #e2e8f0;
+            --border-card: #e5e9f0;
+            --border-hover: #cbd5e1;
+
+            /* High-Contrast Ink Typography */
+            --text-heading: #090d16;
+            --text-body: #334155;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --text-caption: #94a3b8;
+
+            /* Layered Elevations */
+            --shadow-subtle: 0 1px 2px rgba(15, 23, 42, 0.04);
+            --shadow-card: 0 1px 3px rgba(15, 23, 42, 0.04), 0 8px 24px -4px rgba(15, 23, 42, 0.04);
+            --shadow-card-hover: 0 4px 6px -1px rgba(15, 23, 42, 0.06), 0 16px 32px -6px rgba(15, 23, 42, 0.08);
+            --shadow-popover: 0 20px 40px -12px rgba(15, 23, 42, 0.15);
+
+            /* Radii */
+            --radius-xs: 6px;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 18px;
+            --radius-xl: 24px;
+            --radius-pill: 9999px;
+
+            /* Fonts */
+            --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+
+            /* Transitions */
+            --transition-quick: 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-smooth: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-card: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-canvas);
+            color: var(--text-body);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        ::selection {
+            background-color: #dbeafe;
+            color: #1e40af;
+        }
+
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Typography Utilities */
+        .badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.38rem 0.85rem;
+            border-radius: var(--radius-pill);
+            font-size: 0.8125rem;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        .badge-pill i {
+            font-size: 0.75rem;
+        }
+
+        .badge-blue {
+            background: var(--brand-primary-light);
+            color: var(--brand-primary);
+            border: 1px solid var(--brand-primary-border);
+        }
+
+        .badge-emerald {
+            background: var(--accent-emerald-light);
+            color: var(--accent-emerald);
+            border: 1px solid var(--accent-emerald-border);
+        }
+
+        .badge-violet {
+            background: var(--accent-violet-light);
+            color: var(--accent-violet);
+            border: 1px solid var(--accent-violet-border);
+        }
+
+        .badge-amber {
+            background: var(--accent-amber-light);
+            color: var(--accent-amber);
+            border: 1px solid var(--accent-amber-border);
+        }
+
+        .badge-slate {
+            background: var(--accent-slate-light);
+            color: var(--accent-slate);
+            border: 1px solid var(--border-subtle);
+        }
+
+        .section-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8125rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--brand-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-eyebrow i {
+            font-size: 0.75rem;
+        }
+
+        .section-heading {
+            font-size: clamp(2rem, 3.5vw, 2.75rem);
+            font-weight: 800;
+            letter-spacing: -0.035em;
+            color: var(--text-heading);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .section-desc {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            max-width: 680px;
+            line-height: 1.7;
+            margin-bottom: 3.5rem;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 74px;
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-subtle);
+            z-index: 1000;
+            transition: all var(--transition-smooth);
+        }
+
+        nav.scrolled {
+            height: 66px;
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+        }
+
+        .nav-wrapper {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.875rem;
+            text-decoration: none;
+            color: var(--text-heading);
+        }
+
+        .brand-monogram {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-md);
+            background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.05rem;
+            letter-spacing: -0.04em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+        }
+
+        .brand-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-name {
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: -0.02em;
+            color: var(--text-heading);
+            line-height: 1.2;
+        }
+
+        .brand-role {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            padding: 0.5rem 0.85rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-radius: var(--radius-sm);
+            transition: all var(--transition-quick);
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--brand-primary);
+            background: var(--brand-primary-light);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .availability-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.8rem;
+            background: var(--accent-emerald-light);
+            border: 1px solid var(--accent-emerald-border);
+            border-radius: var(--radius-pill);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent-emerald);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-emerald);
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .status-dot::after {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: 50%;
+            background: #10b981;
+            opacity: 0.5;
+            animation: pulse-ring 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+
+        @keyframes pulse-ring {
+
+            75%,
+            100% {
+                transform: scale(2.2);
+                opacity: 0;
+            }
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.55rem;
+            padding: 0.75rem 1.35rem;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            cursor: pointer;
+            transition: all var(--transition-smooth);
+            border: 1px solid transparent;
+            white-space: nowrap;
+            line-height: 1;
+        }
+
+        .btn i {
+            font-size: 0.875rem;
+        }
+
+        .btn-primary {
+            background: var(--brand-primary);
+            color: #ffffff;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 4px 12px rgba(30, 64, 175, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: var(--brand-primary-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05), 0 8px 20px rgba(30, 64, 175, 0.28);
+        }
+
+        .btn-secondary {
+            background: #ffffff;
+            color: var(--text-heading);
+            border: 1px solid var(--border-subtle);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-canvas-subtle);
+            border-color: var(--border-hover);
+            color: var(--brand-primary);
+            transform: translateY(-1px);
+        }
+
+        .btn-sm {
+            padding: 0.45rem 0.85rem;
+            font-size: 0.8125rem;
+            border-radius: var(--radius-sm);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: transparent;
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-sm);
+            width: 38px;
+            height: 38px;
+            font-size: 1.1rem;
+            color: var(--text-heading);
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 8.5rem 0 5rem;
+            position: relative;
+            background:
+                radial-gradient(ellipse at 80% 10%, rgba(30, 64, 175, 0.05) 0%, transparent 55%),
+                radial-gradient(ellipse at 15% 90%, rgba(4, 120, 87, 0.04) 0%, transparent 50%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.25fr 0.8fr;
+            gap: 3.5rem;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .hero-badges-row {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-title {
+            font-size: clamp(2.25rem, 4.2vw, 3.65rem);
+            font-weight: 800;
+            line-height: 1.14;
+            letter-spacing: -0.035em;
+            color: var(--text-heading);
+            margin-bottom: 1.35rem;
+        }
+
+        .hero-title span.highlight {
+            color: var(--brand-primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-summary {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            line-height: 1.75;
+            margin-bottom: 2rem;
+            max-width: 630px;
+        }
+
+        .hero-summary strong {
+            color: var(--text-heading);
+            font-weight: 600;
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Contact Quick Bar */
+        .contact-quick-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            padding-top: 1.75rem;
+            border-top: 1px solid var(--border-subtle);
+            width: 100%;
+        }
+
+        .quick-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0.5rem 0.875rem;
+            background: #ffffff;
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-pill);
+            font-size: 0.8125rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all var(--transition-quick);
+            cursor: pointer;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .quick-pill i {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            transition: color var(--transition-quick);
+        }
+
+        .quick-pill:hover {
+            border-color: var(--brand-primary);
+            color: var(--brand-primary);
+            background: var(--brand-primary-light);
+            transform: translateY(-1px);
+        }
+
+        .quick-pill:hover i {
+            color: var(--brand-primary);
+        }
+
+        .quick-pill .copy-tag {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            margin-left: 0.2rem;
+        }
+
+        /* Hero Right Column: Python IDE Code Window (Straight & Clean) */
+        .terminal-tilt-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .code-editor-card {
+            width: 100%;
+            background: #090d16;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: var(--radius-lg);
+            box-shadow: 0 16px 36px -10px rgba(15, 23, 42, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+            font-family: var(--font-mono);
+            transition: all var(--transition-card);
+        }
+
+        .code-editor-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 42px -10px rgba(15, 23, 42, 0.26), 0 0 0 1px rgba(37, 99, 235, 0.3);
+        }
+
+        .editor-top-bar {
+            background: #111827;
+            padding: 0.65rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .editor-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .editor-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .dot-red {
+            background: #ef4444;
+        }
+
+        .dot-yellow {
+            background: #f59e0b;
+        }
+
+        .dot-green {
+            background: #10b981;
+        }
+
+        .editor-tab {
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            font-size: 0.775rem;
+            color: #cbd5e1;
+            font-weight: 500;
+        }
+
+        .editor-tab i {
+            color: #38bdf8;
+            font-size: 0.85rem;
+        }
+
+        .editor-copy-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: var(--radius-xs);
+            color: #94a3b8;
+            padding: 0.25rem 0.55rem;
+            font-size: 0.72rem;
+            cursor: pointer;
+            transition: all var(--transition-quick);
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-family: var(--font-sans);
+            font-weight: 600;
+        }
+
+        .editor-copy-btn:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .editor-code-body {
+            padding: 1.1rem 1.25rem;
+            margin: 0;
+            font-size: 0.76rem;
+            line-height: 1.6;
+            overflow-x: auto;
+            color: #e2e8f0;
+            background: transparent;
+        }
+
+        .editor-code-body code {
+            font-family: var(--font-mono);
+            display: block;
+            white-space: pre;
+        }
+
+        /* Clean Syntax Highlight Tokens */
+        .token-keyword {
+            color: #c084fc;
+            font-weight: 600;
+        }
+
+        .token-self {
+            color: #f472b6;
+        }
+
+        .token-class {
+            color: #60a5fa;
+            font-weight: 600;
+        }
+
+        .token-def {
+            color: #38bdf8;
+            font-weight: 600;
+        }
+
+        .token-string {
+            color: #34d399;
+        }
+
+        .token-comment {
+            color: #64748b;
+            font-style: italic;
+        }
+
+        .token-var {
+            color: #e2e8f0;
+        }
+
+        .editor-output-drawer {
+            background: #06090f;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 0.65rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #94a3b8;
+        }
+
+        .output-left {
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+
+        .output-prompt {
+            color: #38bdf8;
+            font-weight: 700;
+        }
+
+        .output-val {
+            color: #34d399;
+            font-weight: 500;
+        }
+
+        .output-badge {
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #34d399;
+            padding: 0.18rem 0.5rem;
+            border-radius: var(--radius-pill);
+            font-size: 0.68rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        /* Metrics Ribbon */
+        .metrics-ribbon {
+            background: #ffffff;
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 2.75rem 0;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .metric-unit {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding-left: 1.25rem;
+            border-left: 2px solid var(--border-subtle);
+            transition: border-color var(--transition-quick);
+        }
+
+        .metric-unit:hover {
+            border-left-color: var(--brand-primary);
+        }
+
+        .metric-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            color: var(--text-heading);
+            line-height: 1.1;
+            margin-bottom: 0.4rem;
+        }
+
+        .metric-number span.accent {
+            color: var(--brand-primary);
+        }
+
+        .metric-label {
+            font-size: 0.9375rem;
+            font-weight: 700;
+            color: var(--text-heading);
+            margin-bottom: 0.25rem;
+        }
+
+        .metric-detail {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Section Layouts */
+        section {
+            padding: 6rem 0;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            background: var(--bg-canvas);
+        }
+
+        .projects-header-bar {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 3rem;
+        }
+
+        .category-filters {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1.25rem;
+        }
+
+        .category-tab {
+            padding: 0.55rem 1.15rem;
+            background: #ffffff;
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-pill);
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all var(--transition-quick);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .category-tab:hover {
+            border-color: var(--border-hover);
+            color: var(--text-heading);
+        }
+
+        .category-tab.active {
+            background: var(--brand-primary);
+            color: #ffffff;
+            border-color: var(--brand-primary);
+            box-shadow: 0 2px 8px rgba(30, 64, 175, 0.25);
+        }
+
+        .projects-flow {
+            display: flex;
+            flex-direction: column;
+            gap: 3.5rem;
+        }
+
+        /* Project Card Design */
+        .case-study-card {
+            background: #ffffff;
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-xl);
+            padding: 2.75rem;
+            box-shadow: var(--shadow-card);
+            transition: all var(--transition-card);
+            display: grid;
+            grid-template-columns: 1fr 1.15fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .case-study-card:hover {
+            box-shadow: var(--shadow-card-hover);
+            border-color: var(--border-hover);
+        }
+
+        .case-meta-strip {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .case-index {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.2rem 0.55rem;
+            border-radius: var(--radius-pill);
+            background: var(--bg-canvas-subtle);
+            color: var(--text-muted);
+            border: 1px solid var(--border-subtle);
+        }
+
+        .case-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: var(--text-heading);
+            margin-bottom: 1rem;
+            line-height: 1.25;
+        }
+
+        .impact-callout {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            padding: 0.65rem 1rem;
+            border-radius: var(--radius-md);
+            font-size: 0.8125rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            line-height: 1.4;
+        }
+
+        .impact-callout i {
+            font-size: 0.875rem;
+            flex-shrink: 0;
+        }
+
+        .impact-callout.green {
+            background: var(--accent-emerald-light);
+            color: var(--accent-emerald);
+            border: 1px solid var(--accent-emerald-border);
+        }
+
+        .impact-callout.blue {
+            background: var(--brand-primary-light);
+            color: var(--brand-primary);
+            border: 1px solid var(--brand-primary-border);
+        }
+
+        .impact-callout.violet {
+            background: var(--accent-violet-light);
+            color: var(--accent-violet);
+            border: 1px solid var(--accent-violet-border);
+        }
+
+        .impact-callout.amber {
+            background: var(--accent-amber-light);
+            color: var(--accent-amber);
+            border: 1px solid var(--accent-amber-border);
+        }
+
+        .case-summary {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .specs-title {
+            font-size: 0.8125rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-heading);
+            margin-bottom: 0.85rem;
+        }
+
+        .specs-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .specs-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .spec-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--brand-primary);
+            margin-top: 0.55rem;
+            flex-shrink: 0;
+        }
+
+        .tech-chips-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+        }
+
+        .tech-chip {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.3rem 0.75rem;
+            background: var(--bg-canvas-subtle);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-pill);
+            color: var(--text-secondary);
+        }
+
+        /* Interactive Showcase Gallery */
+        .showcase-stage {
+            display: flex;
+            flex-direction: column;
+            gap: 0.875rem;
+        }
+
+        .showcase-hero-frame {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            background: var(--bg-canvas-subtle);
+            border: 1px solid var(--border-card);
+            aspect-ratio: 16 / 10;
+            cursor: pointer;
+            box-shadow: var(--shadow-subtle);
+            transition: all var(--transition-smooth);
+        }
+
+        .showcase-hero-frame:hover {
+            border-color: var(--brand-primary);
+            box-shadow: var(--shadow-card);
+        }
+
+        .showcase-hero-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform var(--transition-card);
+        }
+
+        .showcase-hero-frame:hover img {
+            transform: scale(1.02);
+        }
+
+        .showcase-zoom-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(9, 13, 22, 0.45);
+            opacity: 0;
+            backdrop-filter: blur(2px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 0.875rem;
+            font-weight: 600;
+            gap: 0.5rem;
+            transition: opacity var(--transition-quick);
+        }
+
+        .showcase-zoom-overlay i {
+            font-size: 0.95rem;
+        }
+
+        .showcase-hero-frame:hover .showcase-zoom-overlay {
+            opacity: 1;
+        }
+
+        .showcase-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.65rem;
+        }
+
+        .strip-thumb {
+            position: relative;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            border: 2px solid transparent;
+            background: var(--bg-canvas-subtle);
+            aspect-ratio: 16 / 10;
+            cursor: pointer;
+            transition: all var(--transition-quick);
+        }
+
+        .strip-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .strip-thumb:hover {
+            opacity: 0.85;
+            border-color: var(--brand-primary-border);
+        }
+
+        .strip-thumb.active {
+            border-color: var(--brand-primary);
+            box-shadow: 0 0 0 2px rgba(30, 64, 175, 0.2);
+        }
+
+        /* Architecture Flow Diagram Container */
+        .diagram-container {
+            background: var(--bg-canvas-subtle);
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .diagram-node {
+            background: #ffffff;
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-md);
+            padding: 1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .node-name {
+            font-size: 0.9375rem;
+            font-weight: 700;
+            color: var(--text-heading);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .node-name i {
+            color: var(--brand-primary);
+            font-size: 0.875rem;
+        }
+
+        .node-tech {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.55rem;
+            border-radius: var(--radius-sm);
+            background: var(--brand-primary-light);
+            color: var(--brand-primary);
+        }
+
+        .diagram-connector {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            font-family: var(--font-mono);
+            color: var(--text-muted);
+            font-weight: 600;
+            margin: -0.35rem 0;
+        }
+
+        .diagram-connector i {
+            font-size: 0.75rem;
+            color: var(--brand-primary);
+        }
+
+        /* Experience Section */
+        .experience-section {
+            background: #ffffff;
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .experience-layout {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .career-card {
+            background: var(--bg-canvas);
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-xl);
+            padding: 3rem;
+            box-shadow: var(--shadow-card);
+        }
+
+        .career-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .career-role {
+            font-size: 1.65rem;
+            font-weight: 800;
+            color: var(--text-heading);
+            letter-spacing: -0.025em;
+        }
+
+        .career-org {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--brand-primary);
+            margin-top: 0.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .career-org i {
+            font-size: 0.95rem;
+        }
+
+        .career-timeline-badge {
+            font-family: var(--font-mono);
+            font-size: 0.8125rem;
+            font-weight: 600;
+            padding: 0.4rem 0.95rem;
+            background: #ffffff;
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-pill);
+            color: var(--text-heading);
+            box-shadow: var(--shadow-subtle);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .career-domains-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .career-domain-box {
+            background: #ffffff;
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .domain-title {
+            font-size: 0.9375rem;
+            font-weight: 700;
+            color: var(--text-heading);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+        }
+
+        .domain-title .icon {
+            width: 28px;
+            height: 28px;
+            border-radius: var(--radius-xs);
+            background: var(--brand-primary-light);
+            color: var(--brand-primary);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+        }
+
+        .domain-desc {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        /* Technical Skills Matrix */
+        .skills-section {
+            background: var(--bg-canvas);
+        }
+
+        .bento-matrix {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .bento-cell {
+            background: #ffffff;
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-card);
+            transition: all var(--transition-card);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bento-cell:hover {
+            box-shadow: var(--shadow-card-hover);
+            border-color: var(--border-hover);
+            transform: translateY(-2px);
+        }
+
+        .bento-icon-wrapper {
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-md);
+            background: var(--brand-primary-light);
+            border: 1px solid var(--brand-primary-border);
+            color: var(--brand-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .bento-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-heading);
+            margin-bottom: 0.4rem;
+        }
+
+        .bento-desc {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+            line-height: 1.5;
+        }
+
+        .bento-chips-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: auto;
+        }
+
+        .bento-chip {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.65rem;
+            background: var(--bg-canvas-subtle);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-sm);
+            color: var(--text-secondary);
+        }
+
+        .bento-icon-ai {
+            background: #f5f3ff;
+            border-color: #ddd6fe;
+            color: #7c3aed;
+        }
+
+        .bento-chip-highlight {
+            background: #f5f3ff;
+            border-color: #e9d5ff;
+            color: #6d28d9;
+            font-weight: 600;
+        }
+
+        .bento-chip-highlight:hover {
+            background: #ede9fe;
+            border-color: #c4b5fd;
+            color: #5b21b6;
+        }
+
+        @media (min-width: 1025px) {
+            .bento-cell-ai-usage {
+                grid-column: span 2;
+            }
+            .bento-cell-tools {
+                grid-column: span 2;
+            }
+        }
+
+        /* Education & Credentials */
+        .education-section {
+            background: #ffffff;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .edu-flex-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .edu-credential-card {
+            background: var(--bg-canvas);
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-lg);
+            padding: 2.25rem;
+            box-shadow: var(--shadow-subtle);
+            transition: all var(--transition-smooth);
+        }
+
+        .edu-credential-card:hover {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-card);
+        }
+
+        .edu-card-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: var(--radius-sm);
+            background: var(--brand-primary-light);
+            color: var(--brand-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .edu-degree-name {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-heading);
+            margin-bottom: 0.35rem;
+        }
+
+        .edu-school {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--brand-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .edu-scope {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--bg-canvas);
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .contact-hub {
+            background: #ffffff;
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-xl);
+            padding: 3.5rem;
+            box-shadow: var(--shadow-card);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3.5rem;
+        }
+
+        .contact-info-col h3 {
+            font-size: 2.15rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: var(--text-heading);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info-col p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .channel-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .channel-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.1rem 1.25rem;
+            background: var(--bg-canvas);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            color: inherit;
+            transition: all var(--transition-quick);
+        }
+
+        .channel-item:hover {
+            border-color: var(--brand-primary);
+            background: var(--brand-primary-light);
+        }
+
+        .channel-lhs {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .channel-icon-box {
+            width: 42px;
+            height: 42px;
+            border-radius: var(--radius-sm);
+            background: #ffffff;
+            border: 1px solid var(--border-subtle);
+            color: var(--brand-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+        }
+
+        .channel-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--text-muted);
+        }
+
+        .channel-content {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-heading);
+        }
+
+        .action-tag-btn {
+            background: #ffffff;
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-sm);
+            padding: 0.4rem 0.8rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all var(--transition-quick);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .action-tag-btn i {
+            font-size: 0.72rem;
+        }
+
+        .action-tag-btn:hover {
+            background: var(--brand-primary);
+            color: #ffffff;
+            border-color: var(--brand-primary);
+        }
+
+        .inquiry-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .input-block {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .input-label {
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--text-heading);
+        }
+
+        .input-control,
+        .textarea-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: var(--bg-canvas);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            font-family: var(--font-sans);
+            font-size: 0.875rem;
+            color: var(--text-heading);
+            transition: all var(--transition-quick);
+            outline: none;
+        }
+
+        .input-control:focus,
+        .textarea-control:focus {
+            border-color: var(--brand-primary);
+            box-shadow: 0 0 0 3px var(--brand-primary-glow);
+            background: #ffffff;
+        }
+
+        .textarea-control {
+            resize: vertical;
+            min-height: 130px;
+        }
+
+        /* Footer */
+        footer {
+            background: #ffffff;
+            border-top: 1px solid var(--border-subtle);
+            padding: 2.75rem 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .footer-note {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .footer-nav a {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color var(--transition-quick);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .footer-nav a:hover {
+            color: var(--brand-primary);
+        }
+
+        /* Lightbox Modal */
+        .lightbox-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(9, 13, 22, 0.88);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .lightbox-overlay.active {
+            display: flex;
+            animation: modalFade 0.2s ease-out;
+        }
+
+        @keyframes modalFade {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .lightbox-shell {
+            position: relative;
+            max-width: 1120px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-popover);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .lightbox-viewport {
+            width: 100%;
+            max-height: 75vh;
+            background: #000000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .lightbox-viewport img {
+            max-width: 100%;
+            max-height: 75vh;
+            object-fit: contain;
+            display: block;
+        }
+
+        .lightbox-bar {
+            padding: 1.1rem 1.75rem;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .lightbox-title {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--text-heading);
+        }
+
+        .lightbox-idx {
+            font-family: var(--font-mono);
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+        }
+
+        .lightbox-btn-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 42px;
+            height: 42px;
+            background: rgba(9, 13, 22, 0.75);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+            cursor: pointer;
+            transition: all var(--transition-quick);
+            z-index: 10;
+        }
+
+        .lightbox-btn-close:hover {
+            background: var(--brand-primary);
+            border-color: var(--brand-primary);
+        }
+
+        .lightbox-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            background: rgba(9, 13, 22, 0.75);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            cursor: pointer;
+            transition: all var(--transition-quick);
+            z-index: 10;
+        }
+
+        .lightbox-arrow:hover {
+            background: var(--brand-primary);
+            border-color: var(--brand-primary);
+        }
+
+        .lightbox-arrow.left {
+            left: 1rem;
+        }
+
+        .lightbox-arrow.right {
+            right: 1rem;
+        }
+
+        /* Toast Feedback */
+        .toast-bubble {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--text-heading);
+            color: #ffffff;
+            padding: 0.8rem 1.35rem;
+            border-radius: var(--radius-md);
+            font-size: 0.875rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            box-shadow: var(--shadow-popover);
+            z-index: 3000;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all var(--transition-smooth);
+            pointer-events: none;
+        }
+
+        .toast-bubble i {
+            color: var(--accent-emerald-border);
+            font-size: 1rem;
+        }
+
+        .toast-bubble.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2.75rem;
+            }
+
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.75rem;
+            }
+
+            .case-study-card {
+                grid-template-columns: 1fr;
+                gap: 2.25rem;
+            }
+
+            .bento-matrix {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .bento-cell-ai-usage {
+                grid-column: span 2;
+            }
+
+            .bento-cell-tools {
+                grid-column: span 2;
+            }
+
+            .contact-hub {
+                grid-template-columns: 1fr;
+                padding: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 74px;
+                left: 0;
+                right: 0;
+                background: #ffffff;
+                border-bottom: 1px solid var(--border-subtle);
+                flex-direction: column;
+                padding: 1.5rem;
+                box-shadow: var(--shadow-popover);
+                display: none;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .availability-pill {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 2.25rem;
+            }
+
+            .metrics-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .bento-matrix {
+                grid-template-columns: 1fr;
+            }
+
+            .bento-cell-ai-usage,
+            .bento-cell-tools {
+                grid-column: span 1 !important;
+            }
+
+            .edu-flex-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .career-domains-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .career-card {
+                padding: 1.75rem;
+            }
+
+            .case-study-card {
+                padding: 1.75rem;
+            }
+
+            .contact-hub {
+                padding: 1.75rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sticky Navigation -->
+    <nav id="navbar">
+        <div class="container nav-wrapper">
+            <a href="#hero" class="nav-brand">
+                <div class="brand-monogram">MA</div>
+                <div class="brand-info">
+                    <span class="brand-name">Muhammad Ahsan</span>
+                    <span class="brand-role">Python & Enterprise Systems</span>
+                </div>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero" class="nav-link">Overview</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Capabilities</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <div class="availability-pill">
+                    <span class="status-dot"></span>
+                    <span>Available for Opportunities</span>
+                </div>
+                <a href="#contact" class="btn btn-primary btn-sm">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span>Get in Touch</span>
+                </a>
+                <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section" id="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badges-row">
+                        <span class="badge-pill badge-slate">
+                            <i class="fa-solid fa-location-dot"></i>
+                            Karachi, Pakistan
+                        </span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        <span class="highlight">Enterprise Systems</span>, IoT & Industrial AI
+                    </h1>
+
+                    <p class="hero-summary">
+                        I am a <strong>Python Developer</strong> specializing in enterprise-grade web architectures, ERP
+                        modernization pipelines, and computer vision systems.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>Explore Case Studies</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i class="fa-solid fa-comments"></i>
+                            <span>Get in Touch</span>
+                        </a>
+                    </div>
+
+                    <!-- Direct Copy Quick Pill Bar with FontAwesome -->
+                    <div class="contact-quick-bar">
+                        <button class="quick-pill"
+                            onclick="copyContact('ahsanabid1092@gmail.com', 'Email copied to clipboard!')">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>ahsanabid1092@gmail.com</span>
+                            <span class="copy-tag"><i class="fa-regular fa-copy"></i></span>
+                        </button>
+
+                        <button class="quick-pill"
+                            onclick="copyContact('03162673796', 'Phone number copied to clipboard!')">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>0316-2673796</span>
+                            <span class="copy-tag"><i class="fa-regular fa-copy"></i></span>
+                        </button>
+
+                        <a href="https://linkedin.com/in/ahsan-abid0" target="_blank" rel="noopener noreferrer"
+                            class="quick-pill">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                            <span>LinkedIn Profile</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.72rem;"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Hero Card: 3D Tilted Python Terminal Window -->
+                <div class="terminal-tilt-wrapper">
+                    <div class="code-editor-card">
+                        <div class="editor-top-bar">
+                            <div class="editor-controls">
+                                <span class="editor-dot dot-red"></span>
+                                <span class="editor-dot dot-yellow"></span>
+                                <span class="editor-dot dot-green"></span>
+                            </div>
+                            <div class="editor-tab">
+                                <i class="fa-brands fa-python"></i>
+                                <span>main.py</span>
+                            </div>
+                            <button class="editor-copy-btn" onclick="copyPythonCode()" title="Copy Python code">
+                                <i class="fa-regular fa-copy"></i>
+                                <span>Copy</span>
+                            </button>
+                        </div>
+
+                        <pre
+                            class="editor-code-body"><code><span class="token-comment"># Muhammad Ahsan — Python Developer</span>
+<span class="token-var">developer</span> = <span class="token-string">"Muhammad Ahsan"</span>
+<span class="token-var">role</span> = <span class="token-string">"Enterprise &amp; Manufacturing Systems"</span>
+<span class="token-var">company</span> = <span class="token-string">"SM Denim Mills"</span>
+
+<span class="token-var">stack</span> = [<span class="token-string">"Python"</span>, <span class="token-string">"Django"</span>, <span class="token-string">"Flask"</span>, <span class="token-string">"Oracle APEX"</span>, <span class="token-string">"PostgreSQL"</span>]
+<span class="token-var">ai_tools</span> = [<span class="token-string">"YOLO"</span>, <span class="token-string">"OpenCV"</span>, <span class="token-string">"Ollama"</span>, <span class="token-string">"Llama 3.1"</span>]</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Metrics Ribbon -->
+    <section class="metrics-ribbon">
+        <div class="container">
+            <div class="metrics-grid">
+                <div class="metric-unit">
+                    <div class="metric-number">50<span class="accent">+</span></div>
+                    <div class="metric-label">Daily Shift Staff</div>
+                    <div class="metric-detail">Active operational personnel relying daily on custom-engineered
+                        applications.</div>
+                </div>
+                <div class="metric-unit">
+                    <div class="metric-number">10<span class="accent">+</span> Yrs</div>
+                    <div class="metric-label">Archives Digitized</div>
+                    <div class="metric-detail">Transformed physical filing rooms into an instant, searchable DMS
+                        repository.</div>
+                </div>
+                <div class="metric-unit">
+                    <div class="metric-number">Zero</div>
+                    <div class="metric-label">Migration Downtime</div>
+                    <div class="metric-detail">Transitioned core legacy Oracle Forms 6i production modules to modern
+                        Oracle APEX.</div>
+                </div>
+                <div class="metric-unit">
+                    <div class="metric-number">4-Point</div>
+                    <div class="metric-label">Automated Quality Grading</div>
+                    <div class="metric-detail">Standardized textile defect grading with automated IoT rotary meter
+                        hardware capture.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
+        <div class="container">
+            <div class="projects-header-bar">
+                <span class="section-eyebrow">
+                    <i class="fa-solid fa-layer-group"></i>
+                    Case Studies & Production Work
+                </span>
+                <h2 class="section-heading">Systems for Real Operations</h2>
+                <p class="section-desc">
+                    Comprehensive showcase of enterprise modernization, automated document systems, and computer vision
+                    models deployed in active production.
+                </p>
+
+                <!-- Filter Tabs -->
+                <div class="category-filters">
+                    <button class="category-tab active" onclick="applyProjectFilter('all')">All Projects (6)</button>
+                    <button class="category-tab" onclick="applyProjectFilter('enterprise')">Enterprise ERP & Systems
+                        (4)</button>
+                    <button class="category-tab" onclick="applyProjectFilter('ai')">AI & Computer Vision (2)</button>
+                    <button class="category-tab" onclick="applyProjectFilter('web')">Web & API Architectures
+                        (3)</button>
+                </div>
+            </div>
+
+            <div class="projects-flow" id="projectsContainer">
+
+                <!-- CASE STUDY 1: Document Management System (DMS) -->
+                <article class="case-study-card" data-category="enterprise web">
+                    <div class="case-info-col">
+                        <div class="case-meta-strip">
+                            <span class="case-index">01 / RECENT RELEASE</span>
+                            <span class="badge-pill badge-emerald">
+                                <i class="fa-solid fa-folder-tree"></i>
+                                Records & Compliance
+                            </span>
+                        </div>
+
+                        <h3 class="case-title">Centralized Document Management System (DMS)</h3>
+
+                        <div class="impact-callout green">
+                            <i class="fa-solid fa-check"></i>
+                            <span>Digitized 10+ Years of Physical Archives & Paper-Based Logs</span>
+                        </div>
+
+                        <p class="case-summary">
+                            Designed and built a centralized DMS to replace high-friction paper filing rooms. Features
+                            multi-tier category hierarchies, indexed full-text document search, and strict role-based
+                            access control (RBAC) to ensure audit readiness and high retrieval speeds.
+                        </p>
+
+                        <div class="specs-title">Architectural Highlights & Impact:</div>
+                        <ul class="specs-list">
+                            <li>
+                                <span class="spec-dot"></span>
+                                <div><strong>10+ Years Record Modernization:</strong> Replaced physical document
+                                    handling with an indexed digital repository, cutting manual retrieval effort from
+                                    hours to seconds.</div>
+                            </li>
+                            <li>
+                                <span class="spec-dot"></span>
+                                <div><strong>Audit Trail & Access Control:</strong> Enforced granular permission groups
+                                    for departmental access, preserving complete historical revision and download logs.
+                                </div>
+                            </li>
+                            <li>
+                                <span class="spec-dot"></span>
+                                <div><strong>PostgreSQL Search Pipeline:</strong> Engineered high-performance relational
+                                    indexing for rapid multi-criteria filtering by date, department, and file tag.</div>
+                            </li>
+                            <li>
+                                <span class="spec-dot"></span>
+                                <div><strong>Digital Workflow Adoption:</strong> Replaced vulnerable paper logs with
+                                    encrypted, traceable digital storage across all administrative branches.</div>
+                            </li>
+                        </ul>
+
+                        <div class="tech-chips-wrap">
+                            <span class="tech-chip"><i class="fa-solid fa-server"></i> Flask</span>
+                            <span class="tech-chip"><i class="fa-brands fa-react"></i> React.js</span>
+                            <span class="tech-chip"><i class="fa-solid fa-database"></i> PostgreSQL</span>
+                            <span class="tech-chip">Tailwind CSS</span>
+                            <span class="tech-chip">REST APIs</span>
+                            <span class="tech-chip"><i class="fa-solid fa-shield-halved"></i> RBAC</span>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Showcase -->
+                    <div class="showcase-stage" id="showcase-dms">
+                        <div class="showcase-hero-frame" onclick="triggerLightbox('dms')">
+                            <img src="images/dms/01.PNG" alt="DMS Dashboard Overview" id="hero-img-dms">
+                            <div class="showcase-zoom-overlay">
+                                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                <span>Click to View Full Resolution</span>
+                            </div>
+                        </div>
+                        <div class="showcase-strip">
+                            <div class="strip-thumb active" onclick="switchShowcaseHero('dms', 0, this)">
+                                <img src="images/dms/01.PNG" alt="DMS Dashboard">
+                            </div>
+                            <div class="strip-thumb" onclick="switchShowcaseHero('dms', 1, this)">
+                                <img src="images/dms/02.PNG" alt="DMS Hierarchy">
+                            </div>
+                            <div class="strip-thumb" onclick="switchShowcaseHero('dms', 2, this)">
+                                <img src="images/dms/03.PNG" alt="DMS Search">
+                            </div>
+                            <div class="strip-thumb" onclick="switchShowcaseHero('dms', 3, this)">
+                                <img src="images/dms/04.PNG" alt="DMS Viewer">
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CASE STUDY 2: Fabric Inspection Software -->
+                <article class="case-study-card" data-category="enterprise">
+                    <div class="case-info-col">
+                        <div class="case-meta-strip">
+                            <span class="case-index">02</span>
+                            <span class="badge-pill badge-blue">
+                                <i class="fa-solid fa-microchip"></i>
+                                Manufacturing Quality Control
+                            </span>
+                        </div>
+
+                        <h3 class="case-title">Fabric Inspection Software (4-Point Standard)</h3>
+
+                        <div class="impact-callout blue">
+                            <i class="fa-solid fa-check"></i>
+                            <span>Live on Shop Floor — Deployed to 50+ Inspection Operators</span>
+                        </div>
+
+                        <p class="case-summary">
+                            Full-stack quality assurance system implementing the global 4-Point Inspection grading
+                            standard for textile rolls. Integrated directly with IoT rotary encoder hardware to capture
+                            fabric production lengths automatically, eliminating manual entry errors.
+                        </p>
+
+                        <div class="specs-title">Architectural Highlights & Impact:</div>
+                        <ul class="specs-list">
+                            <li>
+                                <span class="spec-dot"></span>
+                                <div><strong>IoT Rotary Meter Integration:</strong> Interfaced with industrial meter
+                                    encoders to stream real-time roll length measurements straight into the application.
+                                </div>
+                            </li>
+                            <li>
+                                <span class="spec-dot"></span>
+                                <div><strong>Automated Grading Engine:</strong> Real-time penalty point computation per
+                                    100 square meters, standardizing quality classification across all shifts.</div>
+                            </li>
+                            <li>
+                                <span class="spec-dot"></span>
+                                <div><strong>Oracle PL/SQL Procedures:</strong> Tuned database routines for
+                                    high-concurrency defect logging, roll summaries, and quality audit trails.</div>
+                            </li>
+                            <li>
+                                <span class="spec-dot"></span>
+                                <div><strong>Standardized Operations:</strong> Replaced paper shift sheets, unifying
+                                    inspection criteria and cutting grading disputes.</div>
+                            </li>
+                        </ul>
+
+                        <div class="tech-chips-wrap">
+                            <span class="tech-chip"><i class="fa-brands fa-python"></i> Python</span>
+                            <span class="tech-chip">Flask</span>
+                            <span class="tech-chip"><i class="fa-solid fa-database"></i> Oracle DB</span>
+                            <span class="tech-chip">PL/SQL</span>
+                            <span class="tech-chip"><i class="fa-solid fa-network-wired"></i> IoT Sensors</span>
+                            <span class="tech-chip"><i class="fa-brands fa-react"></i> React</span>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Showcase -->
+                    <div class="showcase-stage" id="showcase-insp">
+                        <div class="showcase-hero-frame" onclick="triggerLightbox('insp')">
+                            <img src="images/insp/insp1.png" alt="Fabric Inspection Interface" id="hero-img-insp">
+                            <div class="showcase-zoom-overlay">
+                                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                <span>Click to View Full Resolution</span>
+                            </div>
+                        </div>
+                        <div class="showcase-strip">
+                            <div class="strip-thumb active" onclick="switchShowcaseHero('insp', 0, this)">
+                                <img src="images/insp/insp1.png" alt="Inspection Console">
+                            </div>
+                            <div class="strip-thumb" onclick="switchShowcaseHero('insp', 1, this)">
+                                <img src="images/insp/insp2.png" alt="Defect Log">
+                            </div>
+                            <div class="strip-thumb" onclick="switchShowcaseHero('insp', 2, this)">
+                                <img src="images/insp/insp3.png" alt="Quality Summary">
+                            </div>
+                            <div class="strip-thumb" onclick="switchShowcaseHero('insp', 3, this)">
+                                <img src="images/insp/insp4.png" alt="Shift Reports">
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CASE STUDY 3: AI Trolley Counter -->
+                <article class="case-study-card" data-category="ai enterprise">
+                    <div class="case-info-col">
+                        <div class="case-meta-strip">
+                            <span class="case-index">03</span>
+                            <span class="badge-pill badge-violet">
+                                <i class="fa-solid fa-brain"></i>
+                                Computer Vision & Edge Inference
+                            </span>
+                        </div>
+
+                        <h3 class="case-title">AI-Powered Trolley Counting & Material Flow System</h3>
+
+                        <div class="impact-callout violet">
+                            <i class="fa-solid fa-check"></i>
+                            <span>100% Automated Vision Tracking — Zero Labor Counting Errors</span>
+                        </div>
+
+                        <p class="case-summary">
+                            Real-time computer vision system built to track material flow across factory bays. Utilizes
+                            fine-tuned YOLO object detection networks and OpenCV tracking lines to detect and count
+                            coal/material trolleys in variable lighting conditions.
+                        </p>
+
+                        <div class="specs-title">Architectural Highlights & Impact:</div>
+                        <ul class="specs-list">
+                            <li>
+                                <span class="spec-dot"></span>
+                                <div><strong>YOLO Object Detection Pipeline:</strong> Fine-tuned detection model
+                                    providing high accuracy in harsh, low-light manufacturing environments.</div>
+                            </li>
+                            <li>
+                                <span class="spec-dot"></span>
+                                <div><strong>Live Floor Dashboard:</strong> Real-time operations dashboard giving
+                                    managers continuous visibility into material transit.</div>
+                            </li>
+                            <li>
+                                <span class="spec-dot"></span>
+                                <div><strong>Oracle DB Integration:</strong> Auto-persists timestamped counts and line
+                                    passes directly to the enterprise database for shift reconciliation.</div>
+                            </li>
+                            <li>
+                                <span class="spec-dot"></span>
+                                <div><strong>Automated Efficiency:</strong> Eliminated manual counting tally staff,
+                                    freeing personnel for higher-value production duties.</div>
+                            </li>
+                        </ul>
+
+                        <div class="tech-chips-wrap">
+                            <span class="tech-chip"><i class="fa-brands fa-python"></i> Python</span>
+                            <span class="tech-chip"><i class="fa-solid fa-eye"></i> YOLO</span>
+                            <span class="tech-chip">OpenCV</span>
+                            <span class="tech-chip">Flask</span>
+                            <span class="tech-chip"><i class="fa-solid fa-database"></i> Oracle DB</span>
+                            <span class="tech-chip">NumPy</span>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Showcase -->
+                    <div class="showcase-stage" id="showcase-ai">
+                        <div class="showcase-hero-frame" onclick="triggerLightbox('ai')">
+                            <img src="images/ai/ai3.png" alt="AI Detection Frame" id="hero-img-ai">
+                            <div class="showcase-zoom-overlay">
+                                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                <span>Click to View Full Resolution</span>
+                            </div>
+                        </div>
+                        <div class="showcase-strip" style="grid-template-columns: repeat(3, 1fr);">
+                            <div class="strip-thumb active" onclick="switchShowcaseHero('ai', 0, this)">
+                                <img src="images/ai/ai3.png" alt="YOLO Inference">
+                            </div>
+                            <div class="strip-thumb" onclick="switchShowcaseHero('ai', 1, this)">
+                                <img src="images/ai/ai.png" alt="Floor Monitoring">
+                            </div>
+                            <div class="strip-thumb" onclick="switchShowcaseHero('ai', 2, this)">
+                                <img src="images/ai/ai2.png" alt="Throughput Analytics">
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CASE STUDY 4: Oracle APEX RAG Chatbot -->
+                <article class="case-study-card" data-category="ai enterprise">
+                    <div class="case-info-col">
+                        <div class="case-meta-strip">
+                            <span class="case-index">04</span>
+                            <span class="badge-pill badge-violet">
+                                <i class="fa-solid fa-robot"></i>
+                                Enterprise RAG & Private LLM
+                            </span>
+                        </div>
+
+                        <h3 class="case-title">Oracle APEX RAG Assistant (Llama 3.1 8B via Ollama)</h3>
+
+                        <div class="impact-callout violet">
+                            <i class="fa-solid fa-check"></i>
+                            <span>100% On-Premises Privacy — Zero Proprietary Data Exfiltration</span>
+                        </div>
+
+                        <p class="case-summary">
+                            Integrated an on-premises Retrieval-Augmented Generation (RAG) assistant directly into
+                            Oracle APEX enterprise workflows. Uses locally-hosted Llama 3.1 8B via Ollama to empower
+                            non-technical users to navigate complex manufacturing modules and standard operating
+                            procedures.
+                        </p>
+
+                        <div class="specs-title">Architectural Highlights & Impact:</div>
+                        <ul class="specs-list">
+                            <li>
+                                <span class="spec-dot"></span>
+                                <div><strong>Private Local Inference:</strong> Completely self-hosted LLM runtime
+                                    ensuring enterprise manufacturing schemas never touch external cloud endpoints.
+                                </div>
+                            </li>
+                            <li>
+                                <span class="spec-dot"></span>
+                                <div><strong>RAG Knowledge Indexing:</strong> Embedded ERP documentation, form
+                                    functionality guides, and business validations into a vector context pipeline.</div>
+                            </li>
+                            <li>
+                                <span class="spec-dot"></span>
+                                <div><strong>Python/Flask Middleware:</strong> Asynchronous communication bridge
+                                    facilitating real-time streaming dialogue between Oracle APEX and Ollama.</div>
+                            </li>
+                            <li>
+                                <span class="spec-dot"></span>
+                                <div><strong>Reduced User Support Dependency:</strong> Slashed training time and
+                                    internal support tickets for newly onboarded staff.</div>
+                            </li>
+                        </ul>
+
+                        <div class="tech-chips-wrap">
+                            <span class="tech-chip"><i class="fa-brands fa-python"></i> Python</span>
+                            <span class="tech-chip">Flask</span>
+                            <span class="tech-chip">Oracle APEX</span>
+                            <span class="tech-chip"><i class="fa-solid fa-robot"></i> Ollama</span>
+                            <span class="tech-chip">Llama 3.1 8B</span>
+                            <span class="tech-chip">Vector RAG</span>
+                        </div>
+                    </div>
+
+                    <!-- Flow Diagram with FontAwesome -->
+                    <div class="diagram-container">
+                        <div class="diagram-node">
+                            <span class="node-name">
+                                <i class="fa-solid fa-desktop"></i>
+                                Oracle APEX Web Interface
+                            </span>
+                            <span class="node-tech">Client</span>
+                        </div>
+                        <div class="diagram-connector">
+                            <i class="fa-solid fa-arrow-down"></i>
+                            <span>REST Dynamic Action</span>
+                        </div>
+                        <div class="diagram-node">
+                            <span class="node-name">
+                                <i class="fa-solid fa-server"></i>
+                                Flask AI Middleware & RAG Orchestrator
+                            </span>
+                            <span class="node-tech">Python Backend</span>
+                        </div>
+                        <div class="diagram-connector">
+                            <i class="fa-solid fa-arrow-down"></i>
+                            <span>Context Augmentation</span>
+                        </div>
+                        <div class="diagram-node">
+                            <span class="node-name">
+                                <i class="fa-solid fa-brain"></i>
+                                Ollama Engine (Llama 3.1 8B Local)
+                            </span>
+                            <span class="node-tech">Private Edge LLM</span>
+                        </div>
+                        <div class="diagram-connector">
+                            <i class="fa-solid fa-arrow-down"></i>
+                            <span>Grounded ERP Knowledge Stream</span>
+                        </div>
+                        <div class="diagram-node">
+                            <span class="node-name">
+                                <i class="fa-solid fa-database"></i>
+                                Oracle Database Schema & Docs
+                            </span>
+                            <span class="node-tech">Enterprise DB</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CASE STUDY 5: Customized Enterprise POS -->
+                <article class="case-study-card" data-category="web enterprise">
+                    <div class="case-info-col">
+                        <div class="case-meta-strip">
+                            <span class="case-index">05</span>
+                            <span class="badge-pill badge-blue">
+                                <i class="fa-solid fa-cash-register"></i>
+                                Multi-Branch Retail Operations
+                            </span>
+                        </div>
+
+                        <h3 class="case-title">Customized Enterprise POS with Cloud Synchronization</h3>
+
+                        <div class="impact-callout blue">
+                            <i class="fa-solid fa-check"></i>
+                            <span>Multi-Location Inventory Tracking with Offline Auto-Sync</span>
+                        </div>
+
+                        <p class="case-summary">
+                            A production-grade retail Point-of-Sale (POS) application built for high transactional
+                            throughput, rapid barcode scanning, live multi-branch inventory depletion, and background
+                            cloud synchronizations.
+                        </p>
+
+                        <div class="specs-title">Architectural Highlights & Impact:</div>
+                        <ul class="specs-list">
+                            <li>
+                                <span class="spec-dot"></span>
+                                <div><strong>Real-Time Stock Depletion:</strong> Instant stock adjustment across
+                                    counters with automated low-stock warnings and reorder prompts.</div>
+                            </li>
+                            <li>
+                                <span class="spec-dot"></span>
+                                <div><strong>Offline-First Resilience:</strong> Enables cashiers to process sales
+                                    uninterrupted during network fluctuations, batching sync operations upon reconnect.
+                                </div>
+                            </li>
+                            <li>
+                                <span class="spec-dot"></span>
+                                <div><strong>Cash Drawers & Shift Z-Reports:</strong> Enforced cashier permissions,
+                                    end-of-day reconciliation, and comprehensive audit logs.</div>
+                            </li>
+                            <li>
+                                <span class="spec-dot"></span>
+                                <div><strong>Revenue Analytics Dashboard:</strong> Live insights into sales velocity,
+                                    top-performing product categories, and gross margins.</div>
+                            </li>
+                        </ul>
+
+                        <div class="tech-chips-wrap">
+                            <span class="tech-chip">Django</span>
+                            <span class="tech-chip">Tailwind CSS</span>
+                            <span class="tech-chip"><i class="fa-solid fa-database"></i> PostgreSQL</span>
+                            <span class="tech-chip">Redis</span>
+                            <span class="tech-chip">REST APIs</span>
+                            <span class="tech-chip"><i class="fa-solid fa-barcode"></i> Barcode Scanner</span>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Showcase -->
+                    <div class="showcase-stage" id="showcase-pos">
+                        <div class="showcase-hero-frame" onclick="triggerLightbox('pos')">
+                            <img src="images/pos/pos1.png" alt="POS Main Checkout" id="hero-img-pos">
+                            <div class="showcase-zoom-overlay">
+                                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                <span>Click to View Full Resolution</span>
+                            </div>
+                        </div>
+                        <div class="showcase-strip">
+                            <div class="strip-thumb active" onclick="switchShowcaseHero('pos', 0, this)">
+                                <img src="images/pos/pos1.png" alt="POS Checkout">
+                            </div>
+                            <div class="strip-thumb" onclick="switchShowcaseHero('pos', 1, this)">
+                                <img src="images/pos/pos2.png" alt="Inventory">
+                            </div>
+                            <div class="strip-thumb" onclick="switchShowcaseHero('pos', 2, this)">
+                                <img src="images/pos/pos3.png" alt="Cloud Sync">
+                            </div>
+                            <div class="strip-thumb" onclick="switchShowcaseHero('pos', 3, this)">
+                                <img src="images/pos/pos4.png" alt="Analytics">
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CASE STUDY 6: FBR Digital Invoicing Integration -->
+                <article class="case-study-card" data-category="web enterprise">
+                    <div class="case-info-col">
+                        <div class="case-meta-strip">
+                            <span class="case-index">06</span>
+                            <span class="badge-pill badge-amber">
+                                <i class="fa-solid fa-building-columns"></i>
+                                Regulatory & Fiscal Automation
+                            </span>
+                        </div>
+
+                        <h3 class="case-title">FBR Digital Invoicing Fiscal API Integration</h3>
+
+                        <div class="impact-callout amber">
+                            <i class="fa-solid fa-check"></i>
+                            <span>100% Tax Regulatory Compliance & Real-Time QR Verification</span>
+                        </div>
+
+                        <p class="case-summary">
+                            Engineered an automated fiscal integration connecting internal ERP sales pipelines directly
+                            with the Federal Board of Revenue (FBR) Digital Invoicing system. Automates real-time
+                            electronic invoice generation, signature validation, and compliance verification.
+                        </p>
+
+                        <div class="specs-title">Architectural Highlights & Impact:</div>
+                        <ul class="specs-list">
+                            <li>
+                                <span class="spec-dot"></span>
+                                <div><strong>Real-Time HTTPS API Link:</strong> Serializes, signs, and securely
+                                    transmits JSON invoice payloads directly to government validation servers.</div>
+                            </li>
+                            <li>
+                                <span class="spec-dot"></span>
+                                <div><strong>Resilient Retry Queues:</strong> Implemented fault-tolerant asynchronous
+                                    retry mechanisms preventing invoice transmission failure during latency spikes.
+                                </div>
+                            </li>
+                            <li>
+                                <span class="spec-dot"></span>
+                                <div><strong>Digital Signature & QR Generation:</strong> Embeds verified cryptographic
+                                    signatures and scan codes directly onto printed customer invoice vouchers.</div>
+                            </li>
+                            <li>
+                                <span class="spec-dot"></span>
+                                <div><strong>Zero Audit Penalties:</strong> Guaranteed strict alignment between ERP
+                                    transactional ledgers and federal tax records.</div>
+                            </li>
+                        </ul>
+
+                        <div class="tech-chips-wrap">
+                            <span class="tech-chip"><i class="fa-brands fa-python"></i> Python</span>
+                            <span class="tech-chip">Flask</span>
+                            <span class="tech-chip"><i class="fa-solid fa-database"></i> PostgreSQL</span>
+                            <span class="tech-chip">REST APIs</span>
+                            <span class="tech-chip">Celery</span>
+                            <span class="tech-chip"><i class="fa-solid fa-qrcode"></i> Fiscal QR</span>
+                        </div>
+                    </div>
+
+                    <!-- Flow Diagram with FontAwesome -->
+                    <div class="diagram-container">
+                        <div class="diagram-node">
+                            <span class="node-name">
+                                <i class="fa-solid fa-file-invoice-dollar"></i>
+                                ERP Core Billing Engine
+                            </span>
+                            <span class="node-tech">Sales Event</span>
+                        </div>
+                        <div class="diagram-connector">
+                            <i class="fa-solid fa-arrow-down"></i>
+                            <span>Build & Sign Payload</span>
+                        </div>
+                        <div class="diagram-node">
+                            <span class="node-name">
+                                <i class="fa-solid fa-shield-halved"></i>
+                                Python Tax Gateway & Middleware
+                            </span>
+                            <span class="node-tech">Fiscal Layer</span>
+                        </div>
+                        <div class="diagram-connector">
+                            <i class="fa-solid fa-arrow-down"></i>
+                            <span>Secure TLS 1.3 Transmission</span>
+                        </div>
+                        <div class="diagram-node">
+                            <span class="node-name">
+                                <i class="fa-solid fa-building-columns"></i>
+                                Federal Board of Revenue (FBR) Gateway
+                            </span>
+                            <span class="node-tech">Government API</span>
+                        </div>
+                        <div class="diagram-connector">
+                            <i class="fa-solid fa-arrow-down"></i>
+                            <span>Returns Verified Invoice No & QR</span>
+                        </div>
+                        <div class="diagram-node">
+                            <span class="node-name">
+                                <i class="fa-solid fa-qrcode"></i>
+                                Validated Ledger & Printable Invoice
+                            </span>
+                            <span class="node-tech">Compliant</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience Section -->
+    <section class="experience-section" id="experience">
+        <div class="container">
+            <div class="projects-header-bar" style="text-align: center; align-items: center;">
+                <span class="section-eyebrow">
+                    <i class="fa-solid fa-briefcase"></i>
+                    Career Milestone
+                </span>
+                <h2 class="section-heading">Professional Experience</h2>
+                <p class="section-desc" style="text-align: center;">
+                    Proven track record owning and supporting mission-critical enterprise systems in industrial
+                    manufacturing.
+                </p>
+            </div>
+
+            <div class="experience-layout">
+                <div class="career-card">
+                    <div class="career-header">
+                        <div>
+                            <h3 class="career-role">Python Developer</h3>
+                            <div class="career-org">
+                                <i class="fa-solid fa-industry"></i>
+                                <span>SM Denim Mills — Enterprise & Manufacturing Operations</span>
+                            </div>
+                        </div>
+                        <div class="career-timeline-badge">
+                            <i class="fa-regular fa-calendar"></i>
+                            <span>May 2025 – Present</span>
+                        </div>
+                    </div>
+
+                    <div class="career-domains-grid">
+                        <div class="career-domain-box">
+                            <div class="domain-title">
+                                <span class="icon"><i class="fa-solid fa-cubes"></i></span>
+                                <span>Enterprise Applications</span>
+                            </div>
+                            <p class="domain-desc">
+                                Design and develop business-critical enterprise applications supporting ERP and
+                                manufacturing operations, including the Fabric Inspection System and the Document
+                                Management System (DMS) built with Flask and Django.
+                            </p>
+                        </div>
+
+                        <div class="career-domain-box">
+                            <div class="domain-title">
+                                <span class="icon"><i class="fa-solid fa-arrows-rotate"></i></span>
+                                <span>Legacy ERP Modernization</span>
+                            </div>
+                            <p class="domain-desc">
+                                Led the migration of the core Production Module from Oracle Forms 6i to Oracle APEX,
+                                modernizing a legacy system into a browser-based application while maintaining
+                                uninterrupted manufacturing operations.
+                            </p>
+                        </div>
+
+                        <div class="career-domain-box">
+                            <div class="domain-title">
+                                <span class="icon"><i class="fa-solid fa-shield-halved"></i></span>
+                                <span>Production Support & Reliability</span>
+                            </div>
+                            <p class="domain-desc">
+                                Own production support, bug fixes, and continuous feature development for live systems
+                                used daily across manufacturing operations by 50+ staff, maintaining high reliability
+                                with minimal downtime.
+                            </p>
+                        </div>
+
+                        <div class="career-domain-box">
+                            <div class="domain-title">
+                                <span class="icon"><i class="fa-solid fa-building-columns"></i></span>
+                                <span>Regulatory & API Integrations</span>
+                            </div>
+                            <p class="domain-desc">
+                                Integrated FBR Digital Invoicing APIs with core ERP workflows, automating invoice
+                                processing and compliance with digital tax regulations, alongside building internal
+                                RESTful APIs for cross-system data sync.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Skills Matrix -->
+    <section class="skills-section" id="skills">
+        <div class="container">
+            <div class="projects-header-bar" style="text-align: center; align-items: center;">
+                <span class="section-eyebrow">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                    Capabilities
+                </span>
+                <h2 class="section-heading">Technical Matrix & Tooling</h2>
+                <p class="section-desc" style="text-align: center;">
+                    Engineered across backend architectures, enterprise relational databases, applied AI, and industrial
+                    IoT.
+                </p>
+            </div>
+
+            <div class="bento-matrix">
+                <!-- Cell 1 -->
+                <div class="bento-cell">
+                    <div class="bento-icon-wrapper">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="bento-title">Languages</h3>
+                    <p class="bento-desc">Clean, maintainable scripting and high-performance relational query
+                        formulation.</p>
+                    <div class="bento-chips-flex">
+                        <span class="bento-chip"><i class="fa-brands fa-python"></i> Python</span>
+                        <span class="bento-chip"><i class="fa-brands fa-js"></i> JavaScript</span>
+                        <span class="bento-chip"><i class="fa-solid fa-database"></i> SQL</span>
+                        <span class="bento-chip">PL/SQL</span>
+                    </div>
+                </div>
+
+                <!-- Cell 2 -->
+                <div class="bento-cell">
+                    <div class="bento-icon-wrapper">
+                        <i class="fa-solid fa-server"></i>
+                    </div>
+                    <h3 class="bento-title">Backend Frameworks</h3>
+                    <p class="bento-desc">Production-grade web services, background workers, and RESTful architectures.
+                    </p>
+                    <div class="bento-chips-flex">
+                        <span class="bento-chip">Django</span>
+                        <span class="bento-chip">Flask</span>
+                        <span class="bento-chip"><i class="fa-brands fa-node-js"></i> Node.js</span>
+                        <span class="bento-chip">REST APIs</span>
+                        <span class="bento-chip">Celery</span>
+                        <span class="bento-chip">Redis</span>
+                    </div>
+                </div>
+
+                <!-- Cell 3 -->
+                <div class="bento-cell">
+                    <div class="bento-icon-wrapper">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+                    <h3 class="bento-title">Databases & Enterprise</h3>
+                    <p class="bento-desc">Enterprise relational databases, stored procedures, and low-code
+                        modernization.</p>
+                    <div class="bento-chips-flex">
+                        <span class="bento-chip">Oracle Database</span>
+                        <span class="bento-chip">Oracle APEX</span>
+                        <span class="bento-chip">Oracle Forms 6i</span>
+                        <span class="bento-chip">PostgreSQL</span>
+                    </div>
+                </div>
+
+                <!-- Cell 4 -->
+                <div class="bento-cell">
+                    <div class="bento-icon-wrapper">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h3 class="bento-title">AI & Computer Vision</h3>
+                    <p class="bento-desc">Edge inference, real-time object tracking, and private on-premises LLM
+                        solutions.</p>
+                    <div class="bento-chips-flex">
+                        <span class="bento-chip"><i class="fa-solid fa-eye"></i> YOLO</span>
+                        <span class="bento-chip">OpenCV</span>
+                        <span class="bento-chip"><i class="fa-solid fa-robot"></i> Ollama</span>
+                        <span class="bento-chip">Llama 3.1 8B</span>
+                        <span class="bento-chip">Transformers</span>
+                        <span class="bento-chip">PyTorch</span>
+                    </div>
+                </div>
+
+                <!-- Cell 5: AI Usage -->
+                <div class="bento-cell bento-cell-ai-usage">
+                    <div class="bento-icon-wrapper bento-icon-ai">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="bento-title">AI Usage</h3>
+                    <p class="bento-desc">Agentic development workflows, autonomous coding environments, LLM terminal tools, and context protocols.</p>
+                    <div class="bento-chips-flex">
+                        <span class="bento-chip bento-chip-highlight"><i class="fa-solid fa-arrow-pointer"></i> Cursor</span>
+                        <span class="bento-chip bento-chip-highlight"><i class="fa-solid fa-atom"></i> Antigravity</span>
+                        <span class="bento-chip bento-chip-highlight"><i class="fa-solid fa-terminal"></i> Claude Terminal</span>
+                        <span class="bento-chip bento-chip-highlight"><i class="fa-solid fa-code"></i> Codex</span>
+                        <span class="bento-chip bento-chip-highlight"><i class="fa-solid fa-plug"></i> MCP</span>
+                    </div>
+                </div>
+
+                <!-- Cell 6: Frontend & UI -->
+                <div class="bento-cell">
+                    <div class="bento-icon-wrapper">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3 class="bento-title">Frontend & UI</h3>
+                    <p class="bento-desc">Responsive, intuitive interfaces tailored for speed on desktop and floor
+                        kiosks.</p>
+                    <div class="bento-chips-flex">
+                        <span class="bento-chip"><i class="fa-brands fa-react"></i> React.js</span>
+                        <span class="bento-chip">Tailwind CSS</span>
+                        <span class="bento-chip"><i class="fa-brands fa-html5"></i> HTML5</span>
+                        <span class="bento-chip"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+                        <span class="bento-chip">Responsive UI</span>
+                    </div>
+                </div>
+
+                <!-- Cell 7: Tools & Industrial IoT -->
+                <div class="bento-cell bento-cell-tools">
+                    <div class="bento-icon-wrapper">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                    <h3 class="bento-title">Tools & Industrial IoT</h3>
+                    <p class="bento-desc">Hardware integration, operating systems, version control, and continuous
+                        uptime.</p>
+                    <div class="bento-chips-flex">
+                        <span class="bento-chip"><i class="fa-solid fa-microchip"></i> IoT Encoders</span>
+                        <span class="bento-chip"><i class="fa-brands fa-linux"></i> Linux</span>
+                        <span class="bento-chip"><i class="fa-brands fa-git-alt"></i> Git</span>
+                        <span class="bento-chip">ERP Migration</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education-section" id="education">
+        <div class="container">
+            <div class="projects-header-bar" style="text-align: center; align-items: center;">
+                <span class="section-eyebrow">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    Academic Credentials
+                </span>
+                <h2 class="section-heading">Education & Foundations</h2>
+                <p class="section-desc" style="text-align: center;">
+                    Academic background blending software engineering rigor with business administration.
+                </p>
+            </div>
+
+            <div class="edu-flex-grid">
+                <div class="edu-credential-card">
+                    <div class="edu-card-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="edu-degree-name">Bachelor of Business & Information Technology (BBIT)</h3>
+                    <div class="edu-school">Virtual University of Pakistan</div>
+                    <p class="edu-scope">
+                        Rigorous coursework in software engineering, database design, enterprise resource management,
+                        and commercial systems architecture.
+                    </p>
+                </div>
+
+                <div class="edu-credential-card">
+                    <div class="edu-card-icon">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <h3 class="edu-degree-name">Intermediate (Commerce)</h3>
+                    <div class="edu-school">Govt Premier College</div>
+                    <p class="edu-scope">
+                        Foundational study in accounting principles, commercial law, enterprise bookkeeping, and
+                        quantitative analysis.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-hub">
+                <div class="contact-info-col">
+                    <span class="section-eyebrow">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        Initiate Contact
+                    </span>
+                    <h3>Let's Build Something High-Impact Together</h3>
+                    <p>
+                        Whether you are modernizing high-friction enterprise software, integrating IoT & computer vision
+                        onto the factory floor, or designing robust Python APIs, I am available to discuss your
+                        requirements.
+                    </p>
+
+                    <div class="channel-list">
+                        <div class="channel-item">
+                            <div class="channel-lhs">
+                                <div class="channel-icon-box">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <div class="channel-title">Direct Email</div>
+                                    <div class="channel-content">ahsanabid1092@gmail.com</div>
+                                </div>
+                            </div>
+                            <button class="action-tag-btn"
+                                onclick="copyContact('ahsanabid1092@gmail.com', 'Email copied!')">
+                                <i class="fa-regular fa-copy"></i>
+                                <span>Copy</span>
+                            </button>
+                        </div>
+
+                        <div class="channel-item">
+                            <div class="channel-lhs">
+                                <div class="channel-icon-box">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <div class="channel-title">Direct Phone / WhatsApp</div>
+                                    <div class="channel-content">0316-2673796</div>
+                                </div>
+                            </div>
+                            <button class="action-tag-btn" onclick="copyContact('03162673796', 'Phone copied!')">
+                                <i class="fa-regular fa-copy"></i>
+                                <span>Copy</span>
+                            </button>
+                        </div>
+
+                        <a href="https://linkedin.com/in/ahsan-abid0" target="_blank" rel="noopener noreferrer"
+                            class="channel-item">
+                            <div class="channel-lhs">
+                                <div class="channel-icon-box">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </div>
+                                <div>
+                                    <div class="channel-title">LinkedIn Profile</div>
+                                    <div class="channel-content">linkedin.com/in/ahsan-abid0</div>
+                                </div>
+                            </div>
+                            <span class="action-tag-btn">
+                                <span>Visit</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </span>
+                        </a>
+
+                        <div class="channel-item">
+                            <div class="channel-lhs">
+                                <div class="channel-icon-box">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <div class="channel-title">Location</div>
+                                    <div class="channel-content">Orangi Town, Karachi, Pakistan</div>
+                                </div>
+                            </div>
+                            <span class="badge-pill badge-slate">Remote / Onsite</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inquiry Form -->
+                <div class="contact-form-col">
+                    <form class="inquiry-form" onsubmit="dispatchInquiry(event)">
+                        <div class="input-block">
+                            <label class="input-label" for="inqName">Your Name</label>
+                            <input type="text" id="inqName" class="input-control" required>
+                        </div>
+                        <div class="input-block">
+                            <label class="input-label" for="inqEmail">Your Email / Company</label>
+                            <input type="text" id="inqEmail" class="input-control" required>
+                        </div>
+                        <div class="input-block">
+                            <label class="input-label" for="inqDomain">Inquiry Scope / Role</label>
+                            <input type="text" id="inqDomain" class="input-control" required>
+                        </div>
+                        <div class="input-block">
+                            <label class="input-label" for="inqMsg">Message Overview</label>
+                            <textarea id="inqMsg" class="textarea-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <span>Compose & Send Message</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-note">
+                © 2026 <strong>Muhammad Ahsan</strong>. Engineered with clean architecture and modern web design
+                standards.
+            </div>
+            <ul class="footer-nav">
+                <li><a href="#hero">Overview</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Capabilities</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"><i
+                            class="fa-solid fa-arrow-up"></i> Top</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Interactive Lightbox Modal with FontAwesome -->
+    <div class="lightbox-overlay" id="lightboxOverlay" onclick="dismissLightbox(event)">
+        <div class="lightbox-shell" onclick="event.stopPropagation()">
+            <button class="lightbox-btn-close" onclick="dismissLightbox()" title="Close (Esc)">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <button class="lightbox-arrow left" onclick="stepLightbox(-1)" title="Previous (←)">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="lightbox-arrow right" onclick="stepLightbox(1)" title="Next (→)">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+            <div class="lightbox-viewport">
+                <img id="lightboxFrame" src="" alt="Full resolution view">
+            </div>
+
+            <div class="lightbox-bar">
+                <span class="lightbox-title" id="lightboxHeading">Preview</span>
+                <span class="lightbox-idx" id="lightboxCounter">1 of 4</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification with FontAwesome -->
+    <div class="toast-bubble" id="toastBubble">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toastText">Action complete</span>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Gallery Datasets
+        const projectData = {
+            dms: [
+                { src: 'images/dms/01.PNG', caption: 'Document Management System — Overview Dashboard & Document Statistics' },
+                { src: 'images/dms/02.PNG', caption: 'Document Management System — Multi-tier Category Hierarchy & Folder Tree' },
+                { src: 'images/dms/03.PNG', caption: 'Document Management System — Search, Tag Filters, and File Sorting' },
+                { src: 'images/dms/04.PNG', caption: 'Document Management System — In-browser Document Viewer & Audit Logs' }
+            ],
+            insp: [
+                { src: 'images/insp/insp1.png', caption: 'Fabric Inspection Software — Real-time Meter Encoder & Grading Terminal' },
+                { src: 'images/insp/insp2.png', caption: 'Fabric Inspection Software — Defect Tagging & 4-Point Penalty Points Log' },
+                { src: 'images/insp/insp3.png', caption: 'Fabric Inspection Software — Quality Classification & Roll Summaries' },
+                { src: 'images/insp/insp4.png', caption: 'Fabric Inspection Software — Shop Floor Quality Dashboard & Shift Reports' }
+            ],
+            ai: [
+                { src: 'images/ai/ai3.png', caption: 'AI Trolley Detector — YOLO Object Detection Model Bounding Boxes' },
+                { src: 'images/ai/ai.png', caption: 'AI Trolley Detector — Live Production Camera Monitoring Feed' },
+                { src: 'images/ai/ai2.png', caption: 'AI Trolley Detector — Throughput Analytics & Oracle DB Persistence' }
+            ],
+            pos: [
+                { src: 'images/pos/pos1.png', caption: 'Enterprise POS — Cashier Register & Barcode Checkout Interface' },
+                { src: 'images/pos/pos2.png', caption: 'Enterprise POS — Real-time Inventory & Low-Stock Alerts' },
+                { src: 'images/pos/pos3.png', caption: 'Enterprise POS — Multi-branch Cloud Sync & Connectivity Settings' },
+                { src: 'images/pos/pos4.png', caption: 'Enterprise POS — Sales Velocity, Revenue Reports, and Margin Analytics' }
+            ]
+        };
+
+        // Active State Tracking for Hero Switches
+        const activeHeroIndices = {
+            dms: 0,
+            insp: 0,
+            ai: 0,
+            pos: 0
+        };
+
+        function switchShowcaseHero(projectKey, index, thumbEl) {
+            if (!projectData[projectKey] || !projectData[projectKey][index]) return;
+            activeHeroIndices[projectKey] = index;
+
+            const heroImg = document.getElementById(`hero-img-${projectKey}`);
+            if (heroImg) {
+                heroImg.src = projectData[projectKey][index].src;
+                heroImg.alt = projectData[projectKey][index].caption;
+            }
+
+            // Update thumb active state
+            const stage = document.getElementById(`showcase-${projectKey}`);
+            if (stage) {
+                stage.querySelectorAll('.strip-thumb').forEach(t => t.classList.remove('active'));
+                if (thumbEl) thumbEl.classList.add('active');
+            }
+        }
+
+        // Lightbox Functions
+        let activeGalleryKey = null;
+        let activeImageIdx = 0;
+
+        function triggerLightbox(key) {
+            if (!projectData[key]) return;
+            activeGalleryKey = key;
+            activeImageIdx = activeHeroIndices[key] || 0;
+            renderLightbox();
+            document.getElementById('lightboxOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function renderLightbox() {
+            const list = projectData[activeGalleryKey];
+            if (!list || !list[activeImageIdx]) return;
+            const item = list[activeImageIdx];
+
+            const img = document.getElementById('lightboxFrame');
+            img.src = item.src;
+            img.alt = item.caption;
+
+            document.getElementById('lightboxHeading').textContent = item.caption;
+            document.getElementById('lightboxCounter').textContent = `${activeImageIdx + 1} of ${list.length}`;
+        }
+
+        function stepLightbox(direction) {
+            if (!activeGalleryKey) return;
+            const list = projectData[activeGalleryKey];
+            activeImageIdx = (activeImageIdx + direction + list.length) % list.length;
+            renderLightbox();
+        }
+
+        function dismissLightbox() {
+            document.getElementById('lightboxOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        window.addEventListener('keydown', (e) => {
+            const overlay = document.getElementById('lightboxOverlay');
+            if (!overlay.classList.contains('active')) return;
+
+            if (e.key === 'Escape') dismissLightbox();
+            else if (e.key === 'ArrowLeft') stepLightbox(-1);
+            else if (e.key === 'ArrowRight') stepLightbox(1);
+        });
+
+        // Filter Projects
+        function applyProjectFilter(category) {
+            const tabs = document.querySelectorAll('.category-tab');
+            tabs.forEach(t => t.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const cards = document.querySelectorAll('.case-study-card');
+            cards.forEach(card => {
+                const cats = card.getAttribute('data-category') || '';
+                if (category === 'all' || cats.includes(category)) {
+                    card.style.display = 'grid';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Toast Feedback
+        let toastTimer;
+        function fireToast(text) {
+            clearTimeout(toastTimer);
+            const toast = document.getElementById('toastBubble');
+            document.getElementById('toastText').textContent = text;
+            toast.classList.add('active');
+            toastTimer = setTimeout(() => {
+                toast.classList.remove('active');
+            }, 2500);
+        }
+
+        // Copy Contact Text
+        function copyContact(text, msg) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(() => {
+                    fireToast(msg);
+                }).catch(() => {
+                    fallbackClipboard(text, msg);
+                });
+            } else {
+                fallbackClipboard(text, msg);
+            }
+        }
+
+        function fallbackClipboard(text, msg) {
+            const el = document.createElement('textarea');
+            el.value = text;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            fireToast(msg);
+        }
+
+        // Copy Python Code from Hero Editor Card
+        function copyPythonCode() {
+            const code = `# Muhammad Ahsan — Python Developer
+developer = "Muhammad Ahsan"
+role = "Enterprise & Manufacturing Systems"
+company = "SM Denim Mills"
+
+stack = ["Python", "Django", "Flask", "Oracle APEX", "PostgreSQL"]
+ai_tools = ["YOLO", "OpenCV", "Ollama", "Llama 3.1"]`;
+            copyContact(code, 'Python code copied to clipboard!');
+        }
+
+        // Form Submission mailto link
+        function dispatchInquiry(e) {
+            e.preventDefault();
+            const name = document.getElementById('inqName').value;
+            const email = document.getElementById('inqEmail').value;
+            const domain = document.getElementById('inqDomain').value;
+            const msg = document.getElementById('inqMsg').value;
+
+            const mailto = `mailto:ahsanabid1092@gmail.com?subject=${encodeURIComponent(domain + ' — ' + name)}&body=${encodeURIComponent("Sender: " + name + " (" + email + ")\n\n" + msg)}`;
+
+            fireToast('Launching default email client...');
+            setTimeout(() => {
+                window.location.href = mailto;
+            }, 300);
+        }
+
+        // Mobile Menu
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const menuLinks = document.getElementById('navLinks');
+        mobileBtn.addEventListener('click', () => {
+            menuLinks.classList.toggle('open');
+        });
+
+        menuLinks.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', () => {
+                menuLinks.classList.remove('open');
+            });
+        });
+
+        // Navbar Scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 40) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        });
+
+        // ScrollSpy
+        const docSections = document.querySelectorAll('header[id], section[id]');
+        window.addEventListener('scroll', () => {
+            let activeId = '';
+            const scrollPos = window.pageYOffset;
+            docSections.forEach(sec => {
+                const top = sec.offsetTop - 120;
+                const height = sec.offsetHeight;
+                if (scrollPos >= top && scrollPos < top + height) {
+                    activeId = sec.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${activeId}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
